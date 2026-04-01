@@ -6,10 +6,7 @@
     "name": "Kobi Bar Hanin",
     "url": "https://github.com/kobibarhanin"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kobibarhanin/cc-share.git"
-  },
+  "repository": "https://github.com/kobibarhanin/cc-share",
   "license": "MIT",
   "keywords": ["sharing", "collaboration", "team", "sessions", "handoff"]
 }
