@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    {
+      "name": "cc-share",
+      "version": "0.1.0",
+      "description": "Share Claude Code session summaries with your team via S3",
+      "source": {
+        "type": "github",
+        "repo": "kobibarhanin/cc-share",
+        "path": "."
+      }
+    }
+  ]
+}

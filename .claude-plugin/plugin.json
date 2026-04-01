@@ -1,0 +1,15 @@
+{
+  "name": "cc-share",
+  "description": "Share Claude Code session summaries with your team. Generate rich markdown summaries of what you did and sync them to S3 for teammates to fetch and continue.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Kobi Bar Hanin",
+    "url": "https://github.com/kobibarhanin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kobibarhanin/cc-share.git"
+  },
+  "license": "MIT",
+  "keywords": ["sharing", "collaboration", "team", "sessions", "handoff"]
+}
