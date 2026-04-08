@@ -17,6 +17,26 @@ If not configured, tell the user to run `/share-session` first (it handles setup
 
 ## Flow
 
+### Direct link mode
+
+If `$ARGUMENTS` is non-empty, the user provided a direct share link (e.g., `/fetch-sessions Kobi+B./fix-redis-bug_20260408T120000Z.md`).
+
+Run the fetch script with the link as a single argument:
+
+```bash
+bash ${CLAUDE_SKILL_DIR}/scripts/fetch.sh "$ARGUMENTS"
+```
+
+This downloads the session directly. Read the downloaded markdown file from the path the script outputs. Present the full summary to the user.
+
+Then ask which aspect they'd like to continue working on, offering the **Next Steps** from the summary as options.
+
+**Skip Step 1 and Step 2 below** — they are only for the browsing flow when no arguments are provided.
+
+---
+
+### Browse mode (no arguments)
+
 ### Step 1 — Show all sessions upfront
 
 Run the fetch script with no arguments:

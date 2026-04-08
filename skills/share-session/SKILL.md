@@ -178,4 +178,16 @@ bash ${CLAUDE_SKILL_DIR}/scripts/upload.sh "<descriptive-filename>.md"
 
 Pass the descriptive filename as the first argument to the script.
 
-3. Report the S3 path to the user so they can share it with teammates.
+3. The script outputs a `SUCCESS:` line with the full storage path and a `SHARE_LINK:` line with a shareable token.
+
+   Present both to the user:
+   - The full storage path (from the SUCCESS line)
+   - The share link, formatted for easy copying
+
+   Tell the user that teammates can load this session directly by running `/fetch-sessions <link>`. Example output:
+
+   > Uploaded to s3://claude-code-shared-sessions/Kobi B./fix-redis-bug_20260408T120000Z.md
+   >
+   > **Share link:** `Kobi+B./fix-redis-bug_20260408T120000Z.md`
+   >
+   > Teammates can load this directly with: `/fetch-sessions Kobi+B./fix-redis-bug_20260408T120000Z.md`

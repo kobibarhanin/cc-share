@@ -34,6 +34,12 @@ fi
 BACKEND=$(python3 -c "import json; print(json.load(open('$CONFIG_FILE'))['backend'])")
 USERNAME=$(python3 -c "import json; print(json.load(open('$CONFIG_FILE'))['username'])")
 
+# --- Share link helper ---
+encode_link() {
+  local encoded_user="${1// /+}"
+  echo "${encoded_user}/${2}"
+}
+
 # --- Upload ---
 
 case "$BACKEND" in
@@ -48,6 +54,7 @@ case "$BACKEND" in
     S3_PATH="${S3_BUCKET%/}/${USERNAME}/${FILENAME}"
     aws s3 cp "$SUMMARY_FILE" "$S3_PATH" --content-type "text/markdown" --quiet
     echo "SUCCESS: Uploaded to $S3_PATH"
+    echo "SHARE_LINK: $(encode_link "$USERNAME" "$FILENAME")"
     ;;
 
   file)
@@ -57,6 +64,7 @@ case "$BACKEND" in
     OUTPUT_PATH="$DEST_DIR/$FILENAME"
     cp "$SUMMARY_FILE" "$OUTPUT_PATH"
     echo "SUCCESS: Saved to $OUTPUT_PATH"
+    echo "SHARE_LINK: $(encode_link "$USERNAME" "$FILENAME")"
     ;;
 
   *)

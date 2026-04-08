@@ -21,8 +21,16 @@ if [ ! -f "$CONFIG_FILE" ]; then
 fi
 
 BACKEND=$(python3 -c "import json; print(json.load(open('$CONFIG_FILE'))['backend'])")
-TARGET_USER="${1:-}"
-FILENAME="${2:-}"
+
+# --- Detect share link (single arg containing /) ---
+if [ $# -eq 1 ] && [[ "$1" == */* ]]; then
+  ENCODED_USER="${1%%/*}"
+  FILENAME="${1#*/}"
+  TARGET_USER="${ENCODED_USER//+/ }"
+else
+  TARGET_USER="${1:-}"
+  FILENAME="${2:-}"
+fi
 
 case "$BACKEND" in
   s3)
