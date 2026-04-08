@@ -1,6 +1,6 @@
 # cc-share
 
-[![Tests](https://github.com/kobibarhanin/cc-share/actions/workflows/test.yml/badge.svg)](https://github.com/kobibarhanin/cc-share/actions/workflows/test.yml)
+[![Tests](https://github.com/kobibarhanin/cc-share/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/kobibarhanin/cc-share/actions/workflows/test.yml)
 
 Share Claude Code sessions with your team.
 
